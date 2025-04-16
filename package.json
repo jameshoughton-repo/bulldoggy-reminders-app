@@ -1,0 +1,17 @@
+{
+  "name": "bulldoggy-reminders-app",
+  "version": "1.0.0",
+  "description": "![Bulldoggy Logo](static/img/logos/bulldoggy-100px.png)",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.14.1"
+  }
+}
