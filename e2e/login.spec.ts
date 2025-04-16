@@ -19,6 +19,7 @@ test('test login | standard user', async ({ page }) => {
   await loginPage.inputUsername(validUsername);
   await loginPage.inputPassword(validPassword);
   await loginPage.clickLogin();
+  await loginPage.assertValidLogin();
 });
 
 // login with invalid account details 

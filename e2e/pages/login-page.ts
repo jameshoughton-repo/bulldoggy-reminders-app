@@ -6,13 +6,14 @@ export class LoginPage {
   readonly enterPassword: Locator;
   readonly loginButton: Locator;
   readonly loginMessage: Locator;
+  readonly logoutButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.enterUsername = page.getByRole('textbox', { name: 'Enter username' });
     this.enterPassword = page.getByRole('textbox', { name: 'Enter password'});
     this.loginButton = page.getByTestId('login-button');
-    this.loginMessage = page.getByText('Invalid login! Please retry.');
+    this.logoutButton = page.getByRole('button', { name: 'Logout' });
   }
 
   async goto() {
@@ -33,6 +34,10 @@ export class LoginPage {
 
   async assertInvalidLogin() {
     await expect(this.loginMessage).toBeVisible();
+  }
+
+  async assertValidLogin() {
+    await expect(this.logoutButton).toBeVisible();
   }
 
   
