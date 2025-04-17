@@ -30,3 +30,14 @@ test('test login | invalid user', async ({ page }) => {
   await loginPage.clickLogin();
   await loginPage.assertInvalidLogin();
 });
+
+// logout of standard user account 
+test('logout | standard user', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  await loginPage.inputUsername(validUsername);
+  await loginPage.inputPassword(validPassword);
+  await loginPage.clickLogin();
+  await loginPage.assertValidLogin();
+  await loginPage.clickLogout();
+  await loginPage.assertValidLogout();
+})
